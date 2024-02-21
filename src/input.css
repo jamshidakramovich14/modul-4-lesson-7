@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.card {
+  border: 1px solid silver;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.card .card-body {
+  padding: 16px;
+  height: 320px;
+}
+
+.card img {
+  object-fit: cover;
+  object-position: center;
+  height: 230px;
+  width: 100%;
+}
+
+.card h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.card li {
+  margin: 12px 0;
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  transition: all 0.3s linear;
+  transform: scale(1.001);
+}
+
+.card .btn-wrapper {
+  height: 120px;
+  align-items: center;
+}
+
+header {
+  backdrop-filter: blur(10px);
+}
+
+/*------------------ Toaster ---------------------*/
+.toast {
+  position: fixed;
+  z-index: 9999999;
+  width: 300px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: limegreen;
+  padding: 0 20px;
+  right: 10px;
+  top: 70px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  color: #fff;
+}
+
+.toast:hover {
+  background: #000 !important;
+  color: white !important;
+}
+
+.show {
+  transform: translateX(0);
+  animation-name: animateToast;
+  animation-fill-mode: backwards;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+
+.hide {
+  transform: translateX(400%);
+}
+
+@keyframes animateToast {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+/*------------------ Toaster end ------------------*/
